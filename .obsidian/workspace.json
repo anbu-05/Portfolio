@@ -183,6 +183,11 @@
       "bases:Create new base": false
     }
   },
-  "active": "c36776f45fa95fc2",
-  "lastOpenFiles": []
+  "active": "a5bf39acaca3da69",
+  "lastOpenFiles": [
+    "PCB design.md",
+    "RTL design.md",
+    "Robotics.md",
+    "README.md"
+  ]
 }
