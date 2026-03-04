@@ -1,4 +1,5 @@
 [main menu](README.md)
-# IFX007T Motor driver board
 # Power distribution board
-# LoRa + STM32F103 development boards
+# 6 wheel traversal control board
+# IFX007T Motor driver boards
+# LoRa + STM32F103 development board
