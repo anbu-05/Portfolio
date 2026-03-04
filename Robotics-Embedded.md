@@ -27,10 +27,11 @@ i worked in the control and kinematics of our robotic arm on the dhrona rover.
 
 i designed and worked on the microcontroller network within the rover.
 
-in dhrona it was esp32's connected using UART buses
-
-
-# LoRa based controller
+in dhrona it was esp32's connected using UART buses. 
+[images]
+pralay was designed to use multiple STM32 nodes connected using a CAN bus.
+[images]
+### LoRa based controller
 i made this LoRa based controller to that could reach ranges of upto 1km (w/o LoS) to control the rover. this was used to control our rover and it's robotic arm for IRC 2025
 
 [image]
@@ -38,4 +39,7 @@ i made this LoRa based controller to that could reach ranges of upto 1km (w/o Lo
 it uses an ESP32 and an SX1278 LoRa module.
 
 [images]
-# IoT mesh networks
+
+---
+yet to fill:
+- IoT mesh networks
