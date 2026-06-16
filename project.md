@@ -6,7 +6,7 @@ This portfolio has a root `README.md` that links directly to project section fol
 
 The main sections are:
 
-1. `robotics-embedded/`
+1. `embedded/`
 2. `pcb-design/`
 3. `rtl-design/`
 
@@ -27,17 +27,20 @@ All design screenshots are treated as Altium screenshots.
 
 ## Files added
 
-1. `robotics-embedded/README.md`
-2. `pcb-design/README.md`
-3. `pcb-design/power-distribution-board.md`
-4. `pcb-design/power-splitter.md`
-5. `pcb-design/pcb-paneling.md`
-6. `pcb-design/stm32f103-development-board.md`
-7. `pcb-design/six-wheel-traversal-control-board.md`
-8. `pcb-design/ifx007t-motor-driver-board.md`
-9. `pcb-design/lora-stm32f103-development-board.md`
-10. `rtl-design/README.md`
+1. `embedded/README.md`
+2. `embedded/rover-firmware.md`
+3. `embedded/stm32-6dof-robotic-arm.md`
+4. `embedded/mqtt-pid-conveyor.md`
+5. `pcb-design/README.md`
+6. `pcb-design/power-distribution-board.md`
+7. `pcb-design/power-splitter.md`
+8. `pcb-design/pcb-paneling.md`
+9. `pcb-design/stm32f103-development-board.md`
+10. `pcb-design/six-wheel-traversal-control-board.md`
+11. `pcb-design/ifx007t-motor-driver-board.md`
+12. `pcb-design/lora-stm32f103-development-board.md`
+13. `rtl-design/README.md`
 
 ## Last update
 
-Added one small teaser image for each project in `pcb-design/README.md`.
+Split the Embedded Systems section into an index and three project files: rover firmware, STM32 6DOF robotic arm, and MQTT PID conveyor.
