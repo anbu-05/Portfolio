@@ -1,4 +1,4 @@
-[main menu](README.md)
+[main menu](../README.md)
 # Mars Rover prototype
 as part of team vyadh, along with my teammates, i built two iterations of a mars rover prototype.
 
