@@ -43,4 +43,4 @@ All design screenshots are treated as Altium screenshots.
 
 ## Last update
 
-Split the Embedded Systems section into an index and three project files: rover firmware, STM32 6DOF robotic arm, and MQTT PID conveyor.
+Kept the LoRa + STM32F103 board in the printed/assembled PCB section, but changed its index teaser back to the 3D model so the PCB design table stays visually uniform. The detailed LoRa page still includes the real Rev 1 PCB and assembled debug photos.
