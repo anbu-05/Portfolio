@@ -11,13 +11,13 @@ This board was meant to control 6 motors and read encoder output from all 6. The
 This design was built around an STM32H523RET6.
 
 <p align="center">
-  <img src="../attachments/Pasted_image_20260314032054.png" width="600"/>
+  <img src="attachments/Pasted_image_20260314032054.png" width="600"/>
 </p>
 
 ### Blue-pill version
 
 <p align="center">
-  <img src="../attachments/Pasted_image_20260314031038.png" width="600"/>
+  <img src="attachments/Pasted_image_20260314031038.png" width="600"/>
 </p>
 
 ## Layout / Routing
@@ -25,21 +25,21 @@ This design was built around an STM32H523RET6.
 ### Fully custom design
 
 <p align="center">
-  <img src="../attachments/Pasted_image_20260314032107.png" width="600"/>
+  <img src="attachments/Pasted_image_20260314032107.png" width="600"/>
 </p>
 
 ### Blue-pill version
 
 <p align="center">
-  <img src="../attachments/Pasted_image_20260314031143.png" width="600"/>
+  <img src="attachments/Pasted_image_20260314031143.png" width="600"/>
 </p>
 
 <p align="center">
-  <img src="../attachments/Pasted_image_20260314031202.png" width="600"/>
+  <img src="attachments/Pasted_image_20260314031202.png" width="600"/>
 </p>
 
 <p align="center">
-  <img src="../attachments/Pasted_image_20260314031220.png" width="600"/>
+  <img src="attachments/Pasted_image_20260314031220.png" width="600"/>
 </p>
 
 ## 3D Model / Printed PCB
@@ -47,21 +47,21 @@ This design was built around an STM32H523RET6.
 ### Fully custom design
 
 <p align="center">
-  <img src="../attachments/Pasted_image_20260314032120.png" width="600"/>
+  <img src="attachments/Pasted_image_20260314032120.png" width="600"/>
 </p>
 
 <p align="center">
-  <img src="../attachments/Pasted_image_20260314032137.png" width="600"/>
+  <img src="attachments/Pasted_image_20260314032137.png" width="600"/>
 </p>
 
 ### Blue-pill version
 
 <p align="center">
-  <img src="../attachments/Pasted_image_20260314031251.png" width="600"/>
+  <img src="attachments/Pasted_image_20260314031251.png" width="600"/>
 </p>
 
 <p align="center">
-  <img src="../attachments/Pasted_image_20260314031310.png" width="600"/>
+  <img src="attachments/Pasted_image_20260314031310.png" width="600"/>
 </p>
 
 ## Additional Info

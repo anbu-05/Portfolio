@@ -4,6 +4,8 @@
 
 This is a short portfolio index for embedded systems, PCB design, and RTL design work.
 
+Each section keeps its images and other local assets in its own `attachments/` folder.
+
 ## Project sections
 
 1. [Embedded Systems](embedded/) - Mars rover electrical systems, STM32/CAN work, LoRa controller work, and firmware.

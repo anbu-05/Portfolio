@@ -10,11 +10,13 @@ The main sections are:
 2. `pcb-design/`
 3. `rtl-design/`
 
+Each section now has its own local `attachments/` folder instead of relying on a shared root attachment folder.
+
 ## PCB design cleanup
 
 The old top-level `PCB-design.md` file was removed. PCB design now lives in `pcb-design/README.md`.
 
-Images are still stored in the shared `attachments/` folder. PCB project files link to them with `../attachments/...`.
+Images are stored inside each project section. PCB project files use `pcb-design/attachments/` through local `attachments/...` links.
 
 Each PCB project file uses these sections:
 
@@ -43,4 +45,4 @@ All design screenshots are treated as Altium screenshots.
 
 ## Last update
 
-Kept the LoRa + STM32F103 board in the printed/assembled PCB section, but changed its index teaser back to the 3D model so the PCB design table stays visually uniform. The detailed LoRa page still includes the real Rev 1 PCB and assembled debug photos.
+Moved the shared attachment assets into `pcb-design/attachments/`, removed duplicate half-size image files, and updated PCB project pages to use category-local image links with HTML width attributes for scaling. The detailed LoRa page still includes the real Rev 1 PCB and assembled debug photos.

@@ -11,17 +11,17 @@ No schematic screenshot is shown for this project.
 ## Layout / Routing
 
 <p align="center">
-  <img src="../attachments/Pasted_image_20260314032944.png" width="600"/>
+  <img src="attachments/Pasted_image_20260314032944.png" width="600"/>
 </p>
 
 <p align="center">
-  <img src="../attachments/Pasted_image_20260314032958.png" width="600"/>
+  <img src="attachments/Pasted_image_20260314032958.png" width="600"/>
 </p>
 
 ## 3D Model / Printed PCB
 
 <p align="center">
-  <img src="../attachments/Pasted_image_20260314032910.png" width="600"/>
+  <img src="attachments/Pasted_image_20260314032910.png" width="600"/>
 </p>
 
 ## Additional Info
