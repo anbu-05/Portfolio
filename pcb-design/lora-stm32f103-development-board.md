@@ -9,43 +9,43 @@ Revision 1 was printed and assembled. During bring-up, the board did not respond
 ## Schematic
 
 <p align="center">
-  <img src="attachments/Pasted_image_20260314034239.png" width="600"/>
+  <img src="attachments/lora-stm32f103-development-board/schematic.png" width="600"/>
 </p>
 
 ## Layout / Routing
 
 <p align="center">
-  <img src="attachments/Pasted_image_20260314034257.png" width="600"/>
+  <img src="attachments/lora-stm32f103-development-board/layout-routing-1.png" width="600"/>
 </p>
 
 <p align="center">
-  <img src="attachments/Pasted_image_20260314034313.png" width="600"/>
+  <img src="attachments/lora-stm32f103-development-board/layout-routing-2.png" width="600"/>
 </p>
 
 ## 3D Model / Printed PCB
 
 <p align="center">
-  <img src="attachments/Pasted_image_20260314034321.png" width="600"/>
+  <img src="attachments/lora-stm32f103-development-board/3d-model-printed-pcb-1.png" width="600"/>
 </p>
 
 <p align="center">
-  <img src="attachments/Pasted_image_20260314034348.png" width="600"/>
+  <img src="attachments/lora-stm32f103-development-board/3d-model-printed-pcb-2.png" width="600"/>
 </p>
 
 <p align="center">
-  <img src="attachments/Pasted_image_20260314034405.png" width="600"/>
+  <img src="attachments/lora-stm32f103-development-board/3d-model-printed-pcb-3.png" width="600"/>
 </p>
 
 <p align="center">
-  <img src="attachments/lora/lora_stm32_v1_bare_top.png" width="600"/>
+  <img src="attachments/lora-stm32f103-development-board/bare-pcb-top.png" width="600"/>
 </p>
 
 <p align="center">
-  <img src="attachments/lora/lora_stm32_v1_bare_bottom.png" width="600"/>
+  <img src="attachments/lora-stm32f103-development-board/bare-pcb-bottom.png" width="600"/>
 </p>
 
 <p align="center">
-  <img src="attachments/lora/lora_stm32_v1_assembled_debug.png" width="600"/>
+  <img src="attachments/lora-stm32f103-development-board/assembled-debug.png" width="600"/>
 </p>
 
 ## Additional Info

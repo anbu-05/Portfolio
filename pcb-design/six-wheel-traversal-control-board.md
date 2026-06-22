@@ -11,13 +11,13 @@ This board was meant to control 6 motors and read encoder output from all 6. The
 This design was built around an STM32H523RET6.
 
 <p align="center">
-  <img src="attachments/Pasted_image_20260314032054.png" width="600"/>
+  <img src="attachments/six-wheel-traversal-control-board/schematic-custom-design.png" width="600"/>
 </p>
 
 ### Blue-pill version
 
 <p align="center">
-  <img src="attachments/Pasted_image_20260314031038.png" width="600"/>
+  <img src="attachments/six-wheel-traversal-control-board/schematic-blue-pill-version.png" width="600"/>
 </p>
 
 ## Layout / Routing
@@ -25,21 +25,21 @@ This design was built around an STM32H523RET6.
 ### Fully custom design
 
 <p align="center">
-  <img src="attachments/Pasted_image_20260314032107.png" width="600"/>
+  <img src="attachments/six-wheel-traversal-control-board/layout-routing-custom-design.png" width="600"/>
 </p>
 
 ### Blue-pill version
 
 <p align="center">
-  <img src="attachments/Pasted_image_20260314031143.png" width="600"/>
+  <img src="attachments/six-wheel-traversal-control-board/layout-routing-blue-pill-version-1.png" width="600"/>
 </p>
 
 <p align="center">
-  <img src="attachments/Pasted_image_20260314031202.png" width="600"/>
+  <img src="attachments/six-wheel-traversal-control-board/layout-routing-blue-pill-version-2.png" width="600"/>
 </p>
 
 <p align="center">
-  <img src="attachments/Pasted_image_20260314031220.png" width="600"/>
+  <img src="attachments/six-wheel-traversal-control-board/layout-routing-blue-pill-version-3.png" width="600"/>
 </p>
 
 ## 3D Model / Printed PCB
@@ -47,21 +47,21 @@ This design was built around an STM32H523RET6.
 ### Fully custom design
 
 <p align="center">
-  <img src="attachments/Pasted_image_20260314032120.png" width="600"/>
+  <img src="attachments/six-wheel-traversal-control-board/3d-model-printed-pcb-custom-design-1.png" width="600"/>
 </p>
 
 <p align="center">
-  <img src="attachments/Pasted_image_20260314032137.png" width="600"/>
+  <img src="attachments/six-wheel-traversal-control-board/3d-model-printed-pcb-custom-design-2.png" width="600"/>
 </p>
 
 ### Blue-pill version
 
 <p align="center">
-  <img src="attachments/Pasted_image_20260314031251.png" width="600"/>
+  <img src="attachments/six-wheel-traversal-control-board/3d-model-printed-pcb-blue-pill-version-1.png" width="600"/>
 </p>
 
 <p align="center">
-  <img src="attachments/Pasted_image_20260314031310.png" width="600"/>
+  <img src="attachments/six-wheel-traversal-control-board/3d-model-printed-pcb-blue-pill-version-2.png" width="600"/>
 </p>
 
 ## Additional Info

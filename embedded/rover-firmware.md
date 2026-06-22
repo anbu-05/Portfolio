@@ -2,52 +2,116 @@
 
 # Rover Firmware
 
-As part of Team Vyadh, along with my teammates, I built two iterations of a Mars rover prototype.
+Source: [github.com/TeamVyadhVIT/Silicon](https://github.com/TeamVyadhVIT/Silicon)
 
-The first iteration was "Dhrona".
+As part of Team Vyadh, I worked on embedded and electrical systems for Mars
+rover prototypes. This page covers the firmware/electrical side only. Photos
+and final deployment details are intentionally left out for now.
 
-[image]
+The Silicon repo is organized as a set of rover modules and prototypes instead
+of one single firmware app. The local source includes STM32 traversal projects,
+encoder experiments, science-kit sensor tests, and mechanical/electrical support
+files.
 
-The second iteration was "Pralay".
+## Hardware / Platform
 
-[image]
+- STM32F103 traversal prototypes
+- STM32F446 traversal/BTS prototype
+- Arduino/PlatformIO encoder tests
+- Science-kit sensor tests
+- BME environmental sensor prototype
+- NPK sensor script
+- Stepper motor test
+- 3D-printed support parts for wiring, connectors, and encoder mounts
 
-I focused mainly on the electrical systems. I built the systems and helped the team move from basic systems like Arduinos to more mainstream systems like STM32s and CAN networks.
+## What I Built
 
-[images]
+- Rover electrical systems and embedded prototypes.
+- Traversal firmware experiments on STM32.
+- Encoder test firmware for measuring motor speed and direction.
+- Sensor bring-up code for science-kit modules.
+- Support tooling and prototype code while moving from simpler Arduino-style
+  tests toward STM32-based rover modules.
 
-We had to manufacture most of our things in house, so I also identified and improved the ways of doing things.
+## Firmware Architecture
 
-[images]
+The repo has separate module branches/worktrees for different parts of the
+rover. The important embedded areas visible in the source are:
 
-## Drive System
+- `module/traversal` for STM32 traversal firmware experiments.
+- `prototype/encoders` for encoder reading and RPM tests.
+- `module/science_kit` for sensor and actuator prototypes.
+- `module/3D_prints` for mechanical support parts used around electronics.
 
-I worked on the creation of different versions of the rover drive system.
+This structure matches how rover subsystems are usually developed: each module
+gets tested separately before being integrated into the full rover.
 
-[images]
+## Traversal Firmware
 
-## Microcontroller Network Within The Rover
+The traversal source includes multiple STM32CubeIDE projects, including
+`traversal_v1`, `traversal_v3`, and `traversal_BTS`. These were used as
+firmware prototypes for motor-control and traversal experiments.
 
-I designed and worked on the microcontroller network within the rover.
+The `traversal_BTS` project targets an STM32F446 and points toward a BTS-style
+motor-driver traversal setup. The other traversal projects target STM32F103
+boards.
 
-In Dhrona, it was ESP32s connected using UART buses.
+## Encoder Prototypes
 
-[images]
+The encoder prototypes started with simple PlatformIO sketches. One version
+measures pulse timing between encoder edges:
 
-Pralay was designed to use multiple STM32 nodes connected using a CAN bus.
+```cpp
+void isr() {
+  if (time_flag) {
+    time0 = micros();
+    time_flag = !time_flag;
+  }
+  else {
+    time1 = micros();
+    time_flag = !time_flag;
+  }
+}
+```
 
-[images]
+Another version counts encoder pulses over a fixed time window and reads the
+direction channel:
 
-## LoRa Based Controller
+```cpp
+void isr() {
+  counter++;
+  motor_dir = digitalRead(3);
+}
+```
 
-I made this LoRa based controller so it could reach ranges of up to 1km without line of sight. This was used to control the rover and its robotic arm for IRC 2025.
+This kind of isolated encoder testing is useful before integrating feedback into
+the traversal controller.
 
-[image]
+## Science Kit Prototypes
 
-It uses an ESP32 and an SX1278 LoRa module.
+The science-kit source includes small prototypes for:
 
-[images]
+- BME sensor bring-up
+- NPK sensor reading
+- Stepper motor testing
+- A robotic-arm inverse-kinematics experiment
 
-## Yet To Fill
+These are kept separate from traversal firmware so each sensor or actuator can
+be tested independently.
 
-- IoT mesh networks
+## Debugging / Testing
+
+Most of this repo is prototype-oriented. The useful evidence is in the module
+split and the small test programs:
+
+- Encoder tests print PWM, timing, direction, and RPM values over serial.
+- STM32 projects keep generated CubeIDE project files and build outputs.
+- Science-kit tests isolate individual sensors or actuators before integration.
+- 3D-print files support practical electronics mounting, such as XT60 holders
+  and encoder mounts.
+
+## Current Status
+
+The page is intentionally conservative. The source shows embedded experiments
+and subsystem prototypes, but final rover deployment notes and photos should be
+added only after review.

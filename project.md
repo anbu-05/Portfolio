@@ -16,7 +16,7 @@ Each section now has its own local `attachments/` folder instead of relying on a
 
 The old top-level `PCB-design.md` file was removed. PCB design now lives in `pcb-design/README.md`.
 
-Images are stored inside each project section. PCB project files use `pcb-design/attachments/` through local `attachments/...` links.
+Images are stored inside each project section. PCB project files use `pcb-design/attachments/<document-name>/` through local `attachments/...` links.
 
 Each PCB project file uses these sections:
 
@@ -45,4 +45,13 @@ All design screenshots are treated as Altium screenshots.
 
 ## Last update
 
-Moved the shared attachment assets into `pcb-design/attachments/`, removed duplicate half-size image files, and updated PCB project pages to use category-local image links with HTML width attributes for scaling. The detailed LoRa page still includes the real Rev 1 PCB and assembled debug photos.
+Started the embedded portfolio writeup pass using these source projects:
+
+1. `/home/anbu/Z/projects/internship/antropi/conveyor` - Conveyor ESP32-S3 MQTT/PID firmware.
+2. `/home/anbu/Z/projects/robarm` - STM32 robotic arm firmware, PCB, and mechanical files.
+3. `/home/anbu/Z/projects/Vyadh25-26/Silicon` - Team Vyadh rover module and prototype repo.
+
+Updated the embedded pages as text-first technical writeups with short code and
+command snippets, and refreshed the root and embedded index descriptions to
+match. Photos and final deployment notes are intentionally left for a later
+review pass.
