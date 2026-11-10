@@ -1,0 +1,222 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[a4paper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\input{glyphtounicode}
+
+\usepackage{xcolor}
+\hypersetup{colorlinks=true, urlcolor=blue, linkcolor=blue}
+
+\usepackage[sfdefault]{roboto}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.19in}
+\addtolength{\topmargin}{-.7in}
+\addtolength{\textheight}{1.4in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\pdfgentounicode=1
+
+\newcommand{\resumeItem}[1]{
+  \item\small{{#1 \vspace{-2pt}}}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{\small #2} \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeExperienceHeading}[3]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textit{\small #3}
+    \end{tabular*}\vspace{-12pt}
+}
+
+\newcommand{\resumeSubSubheading}[1]{
+    \item{\small\textit{\hspace{1em}#1}}\vspace{-2pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & \textbf{\small #2}\\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\newcommand{\resumeEduSideBySide}[6]{
+  \item
+  \begin{tabular*}{1.0\textwidth}[t]{p{0.48\textwidth}@{\hspace{0.04\textwidth}}p{0.48\textwidth}}
+    \textbf{#1} \newline
+    \textit{\small #2} \newline
+    \textbf{\small #3} &
+    \textbf{#4} \newline
+    \textit{\small #5} \newline
+    \textbf{\small #6} \\
+  \end{tabular*}\vspace{-7pt}
+}
+
+%-------------------------------------------
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    {\Huge \scshape Anbu} \\[4pt]
+    \faPhone\ +91 6381348414 \,\,
+    \href{mailto:anbuazhagudurai1@gmail.com}{\faEnvelope\ anbuazhagudurai1@gmail.com} \,\,
+    \href{https://www.linkedin.com/in/anbu2005/}{\faLinkedin\ linkedin.com/in/anbu2005} \,\,
+    \href{https://github.com/anbu-05}{\faGithub\ github.com/anbu-05}
+\end{center}
+
+%-----------LINKS-----------
+\section{Links}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+    \textbf{Overview:} \href{https://github.com/anbu-05}{github.com/anbu-05} - landing page summarizing my work \\
+    \textbf{Full Portfolio:} \href{https://github.com/anbu-05/Portfolio}{github.com/anbu-05/Portfolio} - detailed write-ups of projects and PCB designs \\
+  }}
+\end{itemize}
+\vspace{-16pt}
+
+%-----------SKILLS & EDUCATION-----------
+\section{Skills and Education}
+\begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+        \textbf{Firmware:} C, C++, Python, Embedded C, FreeRTOS, STM32 Cube HAL, ESP-IDF, MQTT, PID control \\
+        \textbf{Digital Design:} Verilog, SystemVerilog, RTL design, FPGA design, AXI4-Lite, RISC-V assembly \\
+        \textbf{Hardware:} STM32, ESP32, Siemens S7-1500 PLC, PCB design, schematic capture, layout, routing, SMD soldering \\
+        \textbf{Tools:} Git, GitHub, QuestaSim, Cadence Xcelium, Altium Designer, KiCad, RISC-V GCC, TIA Portal, S7-PLCSIM \\
+    }}
+    \vspace{-8pt}
+    \resumeExperienceHeading
+        {Vellore Institute of Technology, Vellore $|$ B.Tech EE.VLSI}{}
+        {Aug'23 -- present $|$ CGPA: 7.10}
+    \vspace{-16pt}
+    \resumeExperienceHeading
+        {Kamala Niketan Montessori School, Trichy $|$ Higher Secondary Education (12th)}{}
+        {2023 $|$ Board: 93.8\%}
+\end{itemize}
+\vspace{-2pt}
+
+%-----------PROJECTS-----------
+\section{Projects $|$ \href{https://github.com/anbu-05/Portfolio}{\normalfont\footnotesize
+\faGithub\ portfolio}}
+\vspace{-5pt}
+\resumeSubHeadingListStart
+\resumeProjectHeading
+    % {\href{https://github.com/anbu-05/Portfolio/blob/main/Robotics-Embedded.md}{\faGithub\ \textbf{Mars Rover Prototype}} $|$ \href{https://github.com/anbu-05/Portfolio/blob/main/PCB-design.md}{\faGithub\ \textbf{PCB Designs}} $|$ \emph{Embedded Systems, Wireless, Power Electronics, PCB, System Integration}}{}
+    {\textbf{Mars Rover Prototype} $|$ \textbf{PCB Designs} $|$ \emph{Embedded Systems, Wireless, Power Electronics, PCB, System Integration}}{}
+    \resumeItemListStart
+        \resumeItem{\textbf{IRC 2025 (electrical junior):} designed a custom \textbf{LoRa} RF link (SX1278) for 1\,km bidirectional telemetry - we chose this instead of off-the-shelf RC to carry mixed data like arm position, science feedback, encoder states, on a noise-resistant channel}
+        \resumeItem{Wrote firmware across 4 \textbf{ESP32} nodes using a shared data stream on a single UART channel}
+        \resumeItem{\textbf{IRC 2026 (Electrical Head):} Designed and iteratively built the rover PCB suite (\href{https://github.com/anbu-05/Portfolio/blob/main/pcb-design/README.md}{\underline{images}}) including:
+            \begin{itemize}
+                \item \textbf{200A / 24V / 4.8\,kW, 6 rail} power distribution board with stackable motor driver slots and per-rail current sensing
+                \item motor drivers using half H-Bridge ICs, to be easily repairable
+                \item \textbf{STM32F103/STM32H523} development boards tailored per node (LoRa, drive train, robotic arm, environmental sensors)
+            \end{itemize}}
+        \resumeItem{Designed breakout boards adapting commercial devboards to rover pinouts for rover-specific nodes; all boards implement protection circuitry}
+    \resumeItemListEnd
+\vspace{-13pt}
+\resumeProjectHeading
+    {\textbf{PicoRV32-based RISC-V SoC} $|$ \emph{RTL, SoC Design, FPGA, Verilog/SystemVerilog}}{}
+    \resumeItemListStart
+        \resumeItem{Built a RISC-V SoC around \textbf{PicoRV32} with memory-mapped SRAM, UART, and GPIO}
+        \resumeItem{Designed a custom \textbf{AXI4-Lite interconnect} with address offsetting - each peripheral assumes \texttt{0x0}, keeping peripheral RTL fully decoupled from the system map so that new peripherals plug in without touching the core}
+        \resumeItem{Built a signature-based verification flow - firmware writes pass/fail values to reserved memory, eliminating the need to change the testbench every time we add a new peripheral}
+        \resumeItem{Wrote C firmware using the \textbf{riscv-gcc toolkit} and \textbf{Makefile} build system. Currently migrating to \textbf{Cadence Xcelium} for a unified toolchain toward physical design}
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+    \resumeSubHeadingListStart
+
+        \resumeExperienceHeading
+            {Team Vyadh $|$ \textnormal{\emph{Electrical Head}}}{}
+            {July 2025 -- July 2026}
+            \vspace{-6pt}
+            \resumeItemListStart
+                \resumeItem{Led a 6-member electrical domain within a 33-member rover team - set delivery timelines, managed budget and inventory, and mentored 3 juniors to where they can independently handle most technical work}
+                \resumeItem{Sourced components across 5+ vendors, balancing specs, availability, and cost - instead of defaulting to the cheapest}
+                \resumeItem{Migrated all rover nodes to STM32 and implemented CAN across 6 nodes for noise immunity and hot-swap capability in a high-EMI drivetrain}
+                \resumeItem{Defined domain-wide PCB standards - mandatory protection circuitry and standardized board dimensions for panel sharing to reduce fabrication cost}
+            \resumeItemListEnd
+
+        \resumeExperienceHeading
+            {Antropi Robotics, Bengaluru $|$ \textnormal{\emph{Electronics \& Firmware Intern}}}{}
+            {May 2026 -- July 2026}
+            \vspace{-6pt}
+            \resumeItemListStart
+                \resumeItem{Designed and deployed \textbf{ESP32-S3} conveyor-control firmware using \textbf{ESP-IDF}, \textbf{FreeRTOS}, and \textbf{MQTT} - built a job-based state machine handling tray sensor logic, timeouts, and status feedback across 4 conveyor nodes}
+                \resumeItem{Designed and fabricated 2 iterations of the \textbf{conveyor controller PCB}, revising the sensor interface and board-level fixes after a sensor change}
+                \resumeItem{Built reusable \textbf{PID}-based motor-control firmware and a \textbf{PID}-tuning GUI, commissioning position control for an autodoor system}
+            \resumeItemListEnd
+
+        \resumeExperienceHeading
+           {Vanderlande India Pvt. Ltd., Noida $|$ \textnormal{\emph{PLC Controls Intern}}}{}
+           {May 2025 -- June 2025}
+           \vspace{-6pt}
+            \resumeItemListStart
+                \resumeItem{Programmed PLCs and built HMI interfaces for baggage handling systems using \textbf{Siemens S7-1500} and \textbf{TIA Portal}}
+                \resumeItem{Designed a PLC-controlled conveyor system with modular Function Blocks and validated real-time control logic using FactoryIO and \textbf{S7-PLCSIM}\ (\href{https://github.com/anbu-05/PLC-controlled-conveyor-system}{\underline{GitHub Repository}})}
+            \resumeItemListEnd
+
+    \resumeSubHeadingListEnd
+
+% %-----------ACHIEVEMENTS---------------
+% \section{Achievements}
+%     \resumeItemListStart
+%         \resumeItem{\textbf{International Rover Challenge (IRC) 2025} -- Placed 13th globally at the International Rover Challenge 2025 as part of a multidisciplinary team}
+%         \resumeItem{\textbf{GenNext Vision'25} -- Part of the team that secured 1st place out of 50+ teams at Gen Next Vision}
+%     \resumeItemListEnd
+
+\end{document}
