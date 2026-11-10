@@ -6,7 +6,7 @@ Anbu's one-page resume, built from Jake Gutierrez's MIT-licensed LaTeX template 
 ## Layout
 - `resume.tex` – the only source file. First line `% Built: <Mon DD YYYY HH:MM>` is rewritten by `make`.
 - `latexmkrc` – pdflatex, output to `build/`, nonstop + halt on error.
-- `Makefile` – `make` stamps the date, builds, writes `Resume_Anbu_<Mon>_<DD>_<YYYY>_<HH-MM>.pdf` (e.g. `Resume_Anbu_Nov_05_2026_15-42.pdf`, 24-hour local time, `-` because `:` breaks Windows file names), deletes older `Resume_Anbu_*.pdf` here, then runs the Drive upload. `make watch` rebuilds `build/resume.pdf` on save (no rename/upload). `make clean` removes `build/`.
+- `Makefile` – `make` stamps the date, builds, writes `Resume_Anbu_<Mon>_<DD>_<YYYY>_<HH-MM>.pdf` (e.g. `Resume_Anbu_Nov_05_2026_15-42.pdf`, 24-hour local time, `-` because `:` breaks Windows file names), deletes older `Resume_Anbu_*.pdf` here, then runs the Drive upload. `make local` does the same without the upload: use it for drafts and for agent builds; only plain `make` publishes. `make watch` rebuilds `build/resume.pdf` on save (no rename/upload). `make clean` removes `build/`.
 - `upload-to-drive.sh` – replaces the resume on Google Drive in place.
 - `build/` – aux files and intermediate PDF, git-ignored.
 - `Resume_Anbu_*.pdf` – the final output; only the latest is kept in the folder and in git.
@@ -22,6 +22,8 @@ Anbu's one-page resume, built from Jake Gutierrez's MIT-licensed LaTeX template 
 - The stamp is the build date and time, only in the PDF name (and the `% Built:` comment), never in the `.tex` name. Every build in a new minute therefore changes `resume.tex` and renames the PDF.
 - Drive target is the `Resume` folder (`google-drive:Resume`), which is linked from the user's websites. The script renames the existing `Resume_Anbu_*.pdf` there (server-side rename keeps the file ID) and overwrites its contents, so links never break. It refuses to act if more than one `Resume_Anbu_*.pdf` is in the folder. Other files there are never touched.
 - Upload failures (offline, auth) only warn; `make` still succeeds and keeps the local PDF.
+- Projects order: Turtlebot Controller Board (Intuitive Evolution internship, folder `stealth_startup`; heading slot 2 is "DFM & Hardware Validation" to match the rover entry; company also has its own Experience entry above Team Vyadh; replaced the PicoRV32 RISC-V SoC, Nov 2026) first, then Mars Rover. The Turtlebot entry is about the process (design, manufacture, test, Rev2 plan), not board features; no founder mentions. Source material: `~/Z/projects/internship/stealth_startup/report/report.md`.
+- No bullet line should end in one or two stray words; reword to fix rather than adjusting spacing.
 - Rover PCB "images" link points to the gallery at `github.com/anbu-05/Portfolio/blob/main/pcb-design/README.md` (the repo was renamed from `PCB-Portfolio`; the local git remote still uses the old name, which GitHub redirects).
 
 ## Known issues
