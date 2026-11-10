@@ -4,9 +4,9 @@
 Anbu's one-page resume, built from Jake Gutierrez's MIT-licensed LaTeX template (Roboto font, Font Awesome icons). Lives inside the `portfolio` git repo, which has no root AGENTS.md, so this file is the project root for resume work.
 
 ## Layout
-- `resume.tex` – the only source file. First line `% Built: <Mon DD YYYY>` is rewritten by `make`.
+- `resume.tex` – the only source file. First line `% Built: <Mon DD YYYY HH:MM>` is rewritten by `make`.
 - `latexmkrc` – pdflatex, output to `build/`, nonstop + halt on error.
-- `Makefile` – `make` stamps the date, builds, writes `Resume_Anbu_<Mon>_<DD>_<YYYY>.pdf` (e.g. `Resume_Anbu_Nov_05_2026.pdf`), deletes older `Resume_Anbu_*.pdf` here, then runs the Drive upload. `make watch` rebuilds `build/resume.pdf` on save (no rename/upload). `make clean` removes `build/`.
+- `Makefile` – `make` stamps the date, builds, writes `Resume_Anbu_<Mon>_<DD>_<YYYY>_<HH-MM>.pdf` (e.g. `Resume_Anbu_Nov_05_2026_15-42.pdf`, 24-hour local time, `-` because `:` breaks Windows file names), deletes older `Resume_Anbu_*.pdf` here, then runs the Drive upload. `make watch` rebuilds `build/resume.pdf` on save (no rename/upload). `make clean` removes `build/`.
 - `upload-to-drive.sh` – replaces the resume on Google Drive in place.
 - `build/` – aux files and intermediate PDF, git-ignored.
 - `Resume_Anbu_*.pdf` – the final output; only the latest is kept in the folder and in git.
@@ -19,7 +19,7 @@ Anbu's one-page resume, built from Jake Gutierrez's MIT-licensed LaTeX template 
 
 ## Decisions in force
 - Must stay one page, A4 (`a4paper` in `\documentclass`).
-- The date is the build date, only in the PDF name (and the `% Built:` comment), never in the `.tex` name.
+- The stamp is the build date and time, only in the PDF name (and the `% Built:` comment), never in the `.tex` name. Every build in a new minute therefore changes `resume.tex` and renames the PDF.
 - Drive target is the `Resume` folder (`google-drive:Resume`), which is linked from the user's websites. The script renames the existing `Resume_Anbu_*.pdf` there (server-side rename keeps the file ID) and overwrites its contents, so links never break. It refuses to act if more than one `Resume_Anbu_*.pdf` is in the folder. Other files there are never touched.
 - Upload failures (offline, auth) only warn; `make` still succeeds and keeps the local PDF.
 - Rover PCB "images" link points to the gallery at `github.com/anbu-05/Portfolio/blob/main/pcb-design/README.md` (the repo was renamed from `PCB-Portfolio`; the local git remote still uses the old name, which GitHub redirects).
