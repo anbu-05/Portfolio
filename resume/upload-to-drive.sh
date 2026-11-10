@@ -1,14 +1,15 @@
 #!/usr/bin/env bash
-# Upload the freshly built resume to Google Drive, replacing the old one IN PLACE.
+# Upload the freshly built resume to Google Drive, so the Drive folder mirrors
+# the local folder: only the latest Resume_Anbu_*.pdf is kept.
 #
-# Usage: ./upload-to-drive.sh Resume_Anbu_Nov_10_2026.pdf
+# Usage: ./upload-to-drive.sh Resume_Anbu_Nov_10_2026_17-41.pdf
 #
-# Why "in place": the Drive "Resume" folder (and possibly the file itself) is
-# linked from websites. Deleting and re-uploading would give the file a new ID
-# and break direct file links. Instead we:
-#   1. find the existing Resume_Anbu_*.pdf in the Drive folder,
-#   2. rename it to today's name (server-side rename keeps the same file ID),
-#   3. copy the new PDF over it (rclone updates the existing file's contents).
+# The websites link to the Drive *folder*, not to the file, so the file's Drive
+# ID doesn't matter. We simply:
+#   1. upload the new PDF to the folder,
+#   2. move every other Resume_Anbu_*.pdf there to the Drive trash
+#      (recoverable for 30 days).
+# Other files in the folder are never touched.
 #
 # Any failure (offline, rclone not configured, auth expired) only prints a
 # warning and exits non-zero; the Makefile ignores the exit code so the local
@@ -29,29 +30,22 @@ warn() {
 [ -f "$NEW_NAME" ] || warn "$NEW_NAME does not exist"
 command -v rclone >/dev/null || warn "rclone is not installed"
 
-# List existing resume PDFs in the Drive folder (names only, files only).
-# --include filters to our naming pattern so other files in the folder are never touched.
-existing=$(rclone lsf --files-only --include 'Resume_Anbu_*.pdf' "$REMOTE_DIR" 2>&1) \
-    || warn "could not list $REMOTE_DIR (offline or rclone auth problem): $existing"
-
-count=$(printf '%s\n' "$existing" | grep -c . || true)
-
-if [ "$count" -gt 1 ]; then
-    # More than one match is unexpected; refuse to guess which one is linked.
-    warn "found $count Resume_Anbu_*.pdf files in $REMOTE_DIR, expected at most 1:
-$existing"
-fi
-
-if [ "$count" -eq 1 ] && [ "$existing" != "$NEW_NAME" ]; then
-    echo "Drive: renaming $existing -> $NEW_NAME"
-    rclone moveto "$REMOTE_DIR/$existing" "$REMOTE_DIR/$NEW_NAME" \
-        || warn "rename on Drive failed"
-fi
-
-# Upload the contents. If a file with this name exists (the one we just renamed,
-# or one from an earlier build today) rclone updates it instead of making a new one.
+# 1. Upload. Done first, so a failed upload never leaves the folder empty.
 echo "Drive: uploading $NEW_NAME to $REMOTE_DIR"
 rclone copyto "$NEW_NAME" "$REMOTE_DIR/$NEW_NAME" \
-    || warn "upload failed"
+    || warn "upload failed (offline or rclone auth problem)"
+
+# 2. Trash older resumes. --include limits the listing to our naming pattern,
+#    so nothing else in the folder is ever touched.
+old=$(rclone lsf --files-only --include 'Resume_Anbu_*.pdf' "$REMOTE_DIR") \
+    || warn "uploaded, but could not list $REMOTE_DIR to remove older copies"
+
+for name in $old; do
+    [ "$name" = "$NEW_NAME" ] && continue    # keep the one we just uploaded
+    echo "Drive: moving $name to trash"
+    # --drive-use-trash=true forces "move to trash" even if the remote's config says otherwise.
+    rclone deletefile --drive-use-trash=true "$REMOTE_DIR/$name" \
+        || echo "WARNING: could not remove $name" >&2
+done
 
 echo "Drive: done."

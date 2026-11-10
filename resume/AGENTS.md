@@ -7,7 +7,7 @@ Anbu's one-page resume, built from Jake Gutierrez's MIT-licensed LaTeX template 
 - `resume.tex` – the only source file. First line `% Built: <Mon DD YYYY HH:MM>` is rewritten by `make`.
 - `latexmkrc` – pdflatex, output to `build/`, nonstop + halt on error.
 - `Makefile` – `make` stamps the date, builds, writes `Resume_Anbu_<Mon>_<DD>_<YYYY>_<HH-MM>.pdf` (e.g. `Resume_Anbu_Nov_05_2026_15-42.pdf`, 24-hour local time, `-` because `:` breaks Windows file names), deletes older `Resume_Anbu_*.pdf` here, then runs the Drive upload. `make local` does the same without the upload: use it for drafts and for agent builds; only plain `make` publishes. `make watch` rebuilds `build/resume.pdf` on save (no rename/upload). `make clean` removes `build/`.
-- `upload-to-drive.sh` – replaces the resume on Google Drive in place.
+- `upload-to-drive.sh` – uploads the new PDF to Google Drive and trashes older resumes there.
 - `build/` – aux files and intermediate PDF, git-ignored.
 - `Resume_Anbu_*.pdf` – the final output; only the latest is kept in the folder and in git.
 
@@ -20,7 +20,7 @@ Anbu's one-page resume, built from Jake Gutierrez's MIT-licensed LaTeX template 
 ## Decisions in force
 - Must stay one page, A4 (`a4paper` in `\documentclass`).
 - The stamp is the build date and time, only in the PDF name (and the `% Built:` comment), never in the `.tex` name. Every build in a new minute therefore changes `resume.tex` and renames the PDF.
-- Drive target is the `Resume` folder (`google-drive:Resume`), which is linked from the user's websites. The script renames the existing `Resume_Anbu_*.pdf` there (server-side rename keeps the file ID) and overwrites its contents, so links never break. It refuses to act if more than one `Resume_Anbu_*.pdf` is in the folder. Other files there are never touched.
+- Drive target is the `Resume` folder (`google-drive:Resume`); the websites link to the folder, not the file, so file IDs don't matter. The script uploads the new PDF, then moves every other `Resume_Anbu_*.pdf` there to the Drive trash (`--drive-use-trash=true`), so the folder mirrors the local one (latest only). Other files there are never touched.
 - Upload failures (offline, auth) only warn; `make` still succeeds and keeps the local PDF.
 - Intuitive Evolution (internship, folder `stealth_startup`, remote, Sep 2026 – present) is the first Experience entry, above Team Vyadh. Its bullets are the Turtlebot controller board work, written about the process (design, manufacture, test, Rev2 plan), not board features; no founder mentions. The founder approved this content (10 Nov 2026) and asked for it in Experience, not Projects. Projects now holds only Mars Rover (PicoRV32 RISC-V SoC was removed, Nov 2026). Source material: `~/Z/projects/internship/stealth_startup/report/report.md`.
 - No bullet line should end in one or two stray words; reword to fix rather than adjusting spacing.
